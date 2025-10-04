@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import Section from '../common/Section';
 
 const FounderSection = styled.section`
   width: 100%;

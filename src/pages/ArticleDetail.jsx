@@ -217,35 +217,6 @@ const BackLink = styled(Link)`
   }
 `;
 
-const ArticleNavigation = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: ${({ theme }) => theme.spacing[12]};
-  padding-top: ${({ theme }) => theme.spacing[8]};
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-`;
-
-const NavLink = styled(Link)`
-  display: flex;
-  align-items: center;
-  color: ${({ theme }) => theme.colors.text.secondary};
-  text-decoration: none;
-  padding: ${({ theme }) => theme.spacing[4]};
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
-  max-width: 250px;
-
-  &:hover {
-    background: rgba(255, 149, 0, 0.1);
-    color: ${({ theme }) => theme.colors.primary};
-  }
-
-  span {
-    margin: 0 ${({ theme }) => theme.spacing[2]};
-  }
-`;
-
 const ShareButtons = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing[4]};
@@ -511,7 +482,6 @@ const articles = {
 
 const ArticleDetail = () => {
   const { slug } = useParams();
-  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const article = articles[slug];
@@ -628,10 +598,6 @@ const ArticleDetail = () => {
 
   const readTime = getEstimatedReadTime(article.content);
   const tableOfContents = extractTableOfContents(article.content);
-  const articleKeys = Object.keys(articles);
-  const currentIndex = articleKeys.indexOf(slug);
-  const prevArticle = currentIndex > 0 ? articles[articleKeys[currentIndex - 1]] : null;
-  const nextArticle = currentIndex < articleKeys.length - 1 ? articles[articleKeys[currentIndex + 1]] : null;
 
   return (
     <PageLayout>

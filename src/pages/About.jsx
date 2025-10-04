@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import Section from '../components/common/Section';
 import Card from '../components/common/Card';
 import Shape3D from '../components/common/Shape3D';
-import PageLayout from '../components/layout/PageLayout';
 
 const AboutContainer = styled(motion.div)`
   min-height: 100vh;

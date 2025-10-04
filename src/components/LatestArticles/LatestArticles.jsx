@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Section from '../common/Section';
-import Card from '../common/Card';
 import { FaRegCalendarAlt } from 'react-icons/fa';
 
 const ArticlesGrid = styled(motion.div)`

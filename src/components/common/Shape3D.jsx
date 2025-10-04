@@ -96,11 +96,12 @@ const Shape3D = ({ type = 'sphere', color = '#2997FF', position = { x: 0, y: 0, 
     window.addEventListener('resize', handleResize);
 
     // Cleanup
+    const container = containerRef.current;
     return () => {
       window.removeEventListener('resize', handleResize);
       
-      if (containerRef.current && rendererRef.current) {
-        containerRef.current.removeChild(rendererRef.current.domElement);
+      if (container && rendererRef.current) {
+        container.removeChild(rendererRef.current.domElement);
       }
 
       if (geometryRef.current) geometryRef.current.dispose();
