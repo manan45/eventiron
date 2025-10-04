@@ -209,60 +209,7 @@ const Copyright = styled(motion.div)`
   }
 `;
 
-const Newsletter = styled(motion.div)`
-  margin-top: ${({ theme }) => theme.spacing[6]};
-`;
-
-const NewsletterForm = styled.form`
-  display: flex;
-  gap: ${({ theme }) => theme.spacing[2]};
-  margin-top: ${({ theme }) => theme.spacing[4]};
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    flex-direction: column;
-  }
-`;
-
-const NewsletterInput = styled.input`
-  flex: 1;
-  padding: ${({ theme }) => theme.spacing[3]};
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  color: ${({ theme }) => theme.colors.text.primary};
-  font-size: ${({ theme }) => theme.typography.fontSize.base};
-  transition: all 0.3s ease;
-
-  &:focus {
-    outline: none;
-    border-color: ${({ theme }) => theme.colors.primary};
-    background: rgba(255, 255, 255, 0.1);
-  }
-`;
-
-const NewsletterButton = styled.button`
-  padding: ${({ theme }) => `${theme.spacing[3]} ${theme.spacing[6]}`};
-  background: linear-gradient(135deg, ${({ theme }) => theme.colors.primary}, ${({ theme }) => `${theme.colors.primary}dd`});
-  color: ${({ theme }) => theme.colors.text.primary};
-  border: none;
-  border-radius: 8px;
-  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 149, 0, 0.2);
-  }
-`;
-
 const Footer = () => {
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault();
-    // Add newsletter subscription logic here
-  };
-
   const handleLinkClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
